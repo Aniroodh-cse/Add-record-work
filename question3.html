@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result-container {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Interactive Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <label>
+                    <input type="radio" name="q1" value="a"> a) Berlin
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="b"> b) Paris
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="c"> c) Madrid
+                </label>
+            </div>
+
+            <div class="question">
+                <p>2. Which planet is known as the Red Planet?</p>
+                <label>
+                    <input type="radio" name="q2" value="a"> a) Venus
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="b"> b) Mars
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="c"> c) Jupiter
+                </label>
+            </div>
+
+            <div class="question">
+                <p>3. What is the capital of Japan?</p>
+                <label>
+                    <input type="radio" name="q3" value="a"> a) Beijing
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="b"> b) Seoul
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="c"> c) Tokyo
+                </label>
+            </div>
+
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+
+        <div id="result-container"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+    const form = document.getElementById('quiz-form');
+    const resultContainer = document.getElementById('result-container');
+
+    let score = 0;
+
+    const q1Answer = form.querySelector('input[name="q1"]:checked');
+    if (q1Answer && q1Answer.value === 'b') {
+        score++;
+    }
+
+    const q2Answer = form.querySelector('input[name="q2"]:checked');
+    if (q2Answer && q2Answer.value === 'b') {
+        score++;
+    }
+                  
+    const q3Answer = form.querySelector('input[name="q3"]:checked');
+    if (q3Answer && q3Answer.value === 'c') {
+        score++;
+    }
+
+    resultContainer.innerHTML = `Your score is: ${score}/3`;
+
+}
+
+    </script>
+</body>
+</html>

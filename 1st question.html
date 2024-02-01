@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+    }
+    
+    #content {
+        display: flex;
+        justify-content: space-around;
+        margin: 2em;
+    }
+    
+    #text-content {
+        flex: 1;
+        padding: 1em;
+    }
+    
+    #media-content {
+        flex: 1;
+        text-align: center;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    video {
+        max-width: 100%;
+    }
+    
+    #form {
+        background-color: #f4f4f4;
+        padding: 2em;
+        text-align: center;
+    }
+    
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+    
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.5em;
+        margin-bottom: 1em;
+    }
+    
+    button {
+        background-color: #333;
+        color: #fff;
+        padding: 0.7em 1em;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+    
+</head>
+<body>
+
+    <header>
+        <h1>BOXMODE</h1>
+    </header>
+
+    <section id="content">
+        <div id="text-content">
+            <h2>Welcome to our Website!</h2>
+            <p>This is a visually appealing static website with multimedia content.</p>
+        </div>
+    </section>
+
+    <section id="form">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        console.log('Name:', form.elements.name.value);
+        console.log('Email:', form.elements.email.value);
+        console.log('Message:', form.elements.message.value);
+
+        form.reset();
+    });
+});
+
+    </script>
+</body>
+</html>

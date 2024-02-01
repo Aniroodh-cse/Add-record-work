@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    #animatedBox {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: relative;
+      animation: moveRight 2s ease-in-out; 
+    }
+
+    @keyframes moveRight {
+      0% { left: 0; }
+      100% { left: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="animatedBox"></div>
+
+<script>
+  function startAnimation() {
+    const animatedBox = document.getElementById('animatedBox');
+    animatedBox.classList.remove('animationClass');
+
+    void animatedBox.offsetWidth;
+    animatedBox.classList.add('animationClass');
+  }
+</script>
+
+</body>
+</html>
